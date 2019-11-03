@@ -1,4 +1,16 @@
+
+        
+        <div style="text-align:left">
+            <img [src]=" imgSrc" style="border-radius: 40%; height: 200px;">
+            <br>
+           
+          <!--  <button (click)="change($event)"  class="btn btn-primary" >Change Image</button> -->
+    </div>
+
+
 <mat-card>
+
+
     <!-- <mat-spinner *ngIf="!isLoading"></mat-spinner> -->
     <form [formGroup]="form" (submit)="save()" >   <!--#postForm use to get objects in thi form ng model help to do that -->
 
@@ -14,6 +26,9 @@
 <button mat-raised-button color="accent" type="submit">Save Post</button>
 </form>
 </mat-card> 
+
+
+<br><br><br>
 
 
 <hr> 

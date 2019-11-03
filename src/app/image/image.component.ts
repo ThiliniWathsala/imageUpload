@@ -16,6 +16,7 @@ export class ImageComponent{
     form:FormGroup;
   imagePreview:string;
 
+  imgSrc:String ='assets/image/empty.png';  //methana database eken gnna image eka asign krnna.ethakota default image eka change wenwa srcImg eken
   
   constructor(public imageService:ImageService){}  // used to identify the correct rout path
     
@@ -26,7 +27,7 @@ export class ImageComponent{
          
 
   }
-
+//meka image upload krna ekata code eka
   onImagePicked(event:Event){
     const file=(event.target as HTMLInputElement).files[0];      //HTMLINPUTElement is used to identify te incominf file is html file input  and .files come as array so we give 0 eleent ususally   
     this.form.patchValue({image:file});        // patchValue allows to target single control     
@@ -51,6 +52,16 @@ save(){
    
 
 }
+
+//image path eka
+
+
+
+
+
+
+
+
 
 
 }
