@@ -14,11 +14,13 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ImageService } from './image/image.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageComponent } from './image/image.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageComponent
+    ImageComponent,
+    HomeComponent
 
   ],
   imports: [

@@ -6,23 +6,35 @@ import { Imagesave } from './image.model';
 export class ImageService{
     constructor(private http:HttpClient){}
 
-    addPost(image:File){
+
+//update image..methana id ekata logwena user id eka pass krnna
+    
+    upDateImage(id:string,image:File | string){
+      //const post:Posts={_id:id,title:title,content:content,imagePath:null};
+      let postData: Imagesave | FormData;
+      
+          postData= new FormData();
+          postData.append("_id",id);          //append krnne files json object kenna
+            
+          postData.append("image",image);         //create form data object if send a file
         
-            const imagedata = new FormData();    //convert data to form data(json object ekak widihata files ywnna be)
-           
-            imagedata.append("image" , image);
-    
-            this.http.post<{message:string, post:Imagesave}>('http://localhost:3000/api/posts',imagedata)
-            .subscribe((responseData)=>{
-                console.log(responseData);
-              const image:Imagesave={
-                  _id:responseData.post._id,
-                  
-                  imagePath:responseData.post.imagePath
-                };
-    
 
-    });
 
-    }
+      
+      this.http.put("http://localhost:3000/api/image/"+id,postData)
+      .subscribe(respose=>{console.log(respose);
+     
+
+      
+  });
+  } 
+
+
+
+
+
+
+
+
+
 }
